@@ -37,3 +37,8 @@ The two set operations I'm going to expand on are `union_with()` and `intersecti
 - How it manipulates my data structure: lookup per key in the other table and an insert into result 
 - Its conceptual complexity: O(k) where k is number of shared keys
 - Relevant edge cases: there's no intersection, return null set
+
+## Extension Feature
+
+I'm choosing to add the `craftRecipe()` feature because I'm designing an inventory using multisets. It would be very convenient if items from the inventory can be combined to create other items because when I gain a new item, the intersection can tell me what things I can potentially make from it. 
+
