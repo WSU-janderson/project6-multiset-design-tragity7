@@ -60,7 +60,29 @@ I chose the HashTable instead of the Sequence because the distinct-key storage a
 
 ## 8. Alternative Design Sketch:
 
-Suppose I did choose Sequence as the data strucutre to design my MultiSet. 
+Suppose I did choose Sequence as the data strucutre to design my MultiSet. It could be represented by `vector<pair<string, unsigned int>>` or `Sequence<string>`. The core operations would use O(n) linear search instead of O(1). Whereas, in a HashTable the search would be really simple because of the lookup tables. 
+
+Here's some pseudocode showing the difference in how the core operations may look like:
+
+**while using HashTable:**
+
+`add(item: string, count: unsigned int = 1) -> void`
+
+**while using Sequence:**
+
+```function add(item, count = 1):
+    if count == 0:
+        return
+
+    index = find_index(item)
+
+    if index != -1:
+        items[index].value += count
+    else:
+        items.append( (item, count) )```
+
+The set operations worst case while using Sequence will become O(n²). A lot of the automated features of the HashTable would have to be manually programmed, such as handling duplicates of items.
+
 
 ## 9. Evaluation Plan:
 
