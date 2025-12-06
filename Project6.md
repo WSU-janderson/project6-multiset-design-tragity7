@@ -79,7 +79,8 @@ Here's some pseudocode showing the difference in how the core operations may loo
     if index != -1:
         items[index].value += count
     else:
-        items.append( (item, count) )```
+        items.append( (item, count) )
+```
 
 The set operations worst case while using Sequence will become O(n²). A lot of the automated features of the HashTable would have to be manually programmed, such as handling duplicates of items.
 
