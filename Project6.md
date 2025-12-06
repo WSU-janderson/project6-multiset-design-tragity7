@@ -78,7 +78,9 @@ I think my design is strong and effective because it takes edge cases (such as z
 The trade offs I accepted were the inability to automatically have iteration ordered and that although O(1) is the expected time complexity, the worst case is O(n) which would make performance quite poor. With more time, I could implement a feature that allows for items to be sorted before they are added to the inventory. I could add serialize and serialize as helper methods to store the key-value pairs. 
 
 **Abstraction:** Abstract classes are used to represent general concepts (for example, Shape, Animal), which can be used as base classes for concrete classes (for example, Circle, Dog) [2]. The core operations of the design show abstraction because the add/remove/craft operations can be used in general and don't need to be specified for each item. 'Add' can pick up an apple or a book, without needing separate 'add apple' and 'add book' features. 
+
 **Encapsulation:** Internal HashTable and its members are private. Through the public interface, these private members can be interacted with but the user can't see them/they're hidden. 
+
 **Composition:** The additional CraftRecipe feature showed that the inventory feature can compose with other subsystems in the game.
 
 These principles helped me compartmalize the interface the player is interacting with as completely separate from what's going on behind the scenes.
