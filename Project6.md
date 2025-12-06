@@ -60,6 +60,8 @@ I chose the HashTable instead of the Sequence because the distinct-key storage a
 
 ## 8. Alternative Design Sketch:
 
+Suppose I did choose 
+
 ## 9. Evaluation Plan:
 
 ## 10. Conlusion/Reflection:
@@ -67,6 +69,8 @@ I chose the HashTable instead of the Sequence because the distinct-key storage a
 --------------------------------------------------------------------------------------------------
 
 ## Citations:
+
+Abstract Class, _cppreference.com_. https://www.en.cppreference.com/w/cpp/language/abstract_class.html (accessed December 2025)
 
 GitHub .md file syntax and formatting: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#styling-text
 
