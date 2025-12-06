@@ -60,17 +60,36 @@ I chose the HashTable instead of the Sequence because the distinct-key storage a
 
 ## 8. Alternative Design Sketch:
 
-Suppose I did choose 
+Suppose I did choose Sequence as the data strucutre to design my MultiSet. 
 
 ## 9. Evaluation Plan:
 
+Unit testing is when programmers write test cases for sections of their code. Almost every programming language has its own unit testing framework (e.g., NUnit for C#), which enables the use of small, automatically executable unit tests [1]. I would use this and create my own tests to check:
+- the core operations: insert sequences of items and then use the add, remove, contains, and total_items operations and verify the results match what I input.
+- the set operations: I'd compose at least two known multisets and try the union and intersection operations with them.
+- extra feature - CraftRecipe: if two items successfully combined into a new item, I would check inventory to make sure the two items count went down by 1 in the inventory.
+
+To check performance, I could ask a group of developers/users to try opening/closing/using the inventory at the same time within a timeframe and see how much it slows down the game. I'll time developers when they try to add new features and the smaller the time it takes for the new feature to implement, the better the maintainability and extensibility. Adding new methods should also not require changes to existing clients if the API is stable. 
+
 ## 10. Conlusion/Reflection:
+
+I think my design is strong and effective because it takes edge cases (such as zero counts and absent items) into consideration. The interface focuses on the core operations (add, remove, etc.) which makes it intuitive for other developers/game subsystems/clients to use. These core operations all have an expected complexity of O(1) which means that even with the number of users/features increasing, the performance won't suffer a lot. The use of a hashtable makes locating/adding/counting things in the inventory really easy, espeically since it already counts distinct items in multisets. 
+
+The trade offs I accepted were the inability to automatically have iteration ordered and that although O(1) is the expected time complexity, the worst case is O(n) which would make performance quite poor. With more time, I could implement a feature that allows for items to be sorted before they are added to the inventory. I could add serialize and serialize as helper methods to store the key-value pairs. 
+
+**Abstraction:** Abstract classes are used to represent general concepts (for example, Shape, Animal), which can be used as base classes for concrete classes (for example, Circle, Dog) [2]. The core operations of the design show abstraction because the add/remove/craft operations can be used in general and don't need to be specified for each item. 'Add' can pick up an apple or a book, without needing separate 'add apple' and 'add book' features. 
+**Encapsulation:** Internal HashTable and its members are private. Through the public interface, these private members can be interacted with but the user can't see them/they're hidden. 
+**Composition:** The additional CraftRecipe feature showed that the inventory feature can compose with other subsystems in the game.
+
+These principles helped me compartmalize the interface the player is interacting with as completely separate from what's going on behind the scenes.
 
 --------------------------------------------------------------------------------------------------
 
 ## Citations:
 
-Abstract Class, _cppreference.com_. https://www.en.cppreference.com/w/cpp/language/abstract_class.html (accessed December 2025)
+[1] E. Daka and G. Fraser, "A Survey on Unit Testing Practices and Problems," 2014 IEEE 25th International Symposium on Software Reliability Engineering, Naples, Italy, 2014, pp. 201-211, doi: 10.1109/ISSRE.2014.11.
+
+[2] Abstract Class, _cppreference.com_. https://www.en.cppreference.com/w/cpp/language/abstract_class.html (accessed December 2025)
 
 GitHub .md file syntax and formatting: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#styling-text
 
