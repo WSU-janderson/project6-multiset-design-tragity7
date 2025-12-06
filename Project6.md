@@ -21,3 +21,19 @@ The inventory is a core container of the game, but the game will also have other
 
 Table 1: Core Operations
 Source: me on powerpoint
+
+## Set Operations:
+
+The two set operations I'm going to expand on are `union_with()` and `intersection_with()`
+
+**union_with()**
+- What it accomplishes in gameplay: combines two or more items together. so if I pick up a chest with multiple items in it, I don't have to individually add each item to inventory, they're counted as one thing/union
+- How it manipulates my data structure: uses hash lookups on result
+- Its conceptual complexity: O(n1 + n2) expected, where n1 and n2 are distinct-key counts/items in the two multisets
+- Relevant edge cases: if the order of items being grouped together matters, then you can't use union, you need to add them separately
+
+**intersection_with()**
+- What it accomplishes in gameplay: teo features which share the same item (if I'm crafting a bed and a table, wood is an item that is found in both)
+- How it manipulates my data structure: lookup per key in the other table and an insert into result 
+- Its conceptual complexity: O(k) where k is number of shared keys
+- Relevant edge cases: there's no intersection, return null set
