@@ -19,8 +19,8 @@ The inventory is a core container of the game, but the game will also have other
 
 ![core operations table](https://github.com/WSU-janderson/project6-multiset-design-tragity7/blob/main/core%20operations%20table.png)
 
-Table 1: Core Operations
-Source: me on powerpoint
+- Table 1: Core Operations
+- Source: me on powerpoint
 
 ## 4. Set Operations:
 
@@ -51,7 +51,12 @@ I'm choosing to add the `craftRecipe()` feature because I'm designing an invento
 
 ## 7. Trade-off Analysis:
 
-I chose the HashTable instead of the Sequence because 
+I chose the HashTable instead of the Sequence because the distinct-key storage and lookup made implementing core operations much easier. Sequence require scanning or pairing key-counts to store counts. It has O(n) lookups which means that if the input size doubles, the time required for the lookup operation will approximately double which makes it inefficient. The larger the inventory gets, the worse a core container based on a sequence would perform. Although Sequence is very easy to implement, it's disadvantages outweight the advantages. Espeically since HashTble has the simplest API (Application Programming Interface).
+
+![data structures comparision table](https://github.com/WSU-janderson/project6-multiset-design-tragity7/blob/main/datastructures%20comparision%20table.png)
+
+- Table 2: Comparision of data structures summarized
+- Source: me 
 
 ## 8. Alternative Design Sketch:
 
