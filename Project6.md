@@ -3,7 +3,7 @@
 
 The data set I'm intending to use for my game design is Project 4's Hashtable. 
 
-###Introduction:
+### Introduction:
 
 A multiset is a set that has elements that appear more than once. As such, multisets will serve as a core data structure for the game in any situation where elements appear multiple times. I've chosen the example of the player's inventory. 
 
