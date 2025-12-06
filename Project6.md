@@ -22,7 +22,7 @@ The inventory is a core container of the game, but the game will also have other
 Table 1: Core Operations
 Source: me on powerpoint
 
-## Set Operations:
+## 4. Set Operations:
 
 The two set operations I'm going to expand on are `union_with()` and `intersection_with()`
 
@@ -38,7 +38,19 @@ The two set operations I'm going to expand on are `union_with()` and `intersecti
 - Its conceptual complexity: O(k) where k is number of shared keys
 - Relevant edge cases: there's no intersection, return null set
 
-## Extension Feature
+## 5. Extension Feature:
 
 I'm choosing to add the `craftRecipe()` feature because I'm designing an inventory using multisets. It would be very convenient if items from the inventory can be combined to create other items because when I gain a new item, the intersection can tell me what things I can potentially make from it. 
+
+## 6. UML Diagram:
+
+- is used for private members
++ is used for public interface = the player needs to be able to interact with these features
+
+![UML Diagram](https://github.com/WSU-janderson/project6-multiset-design-tragity7/blob/main/uml%20diagram.png)
+
+## 7. Trade-off Analysis:
+
+
+
 
